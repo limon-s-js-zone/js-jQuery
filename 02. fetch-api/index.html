@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+            crossorigin="anonymous"
+        />
+        <title>Fetch Api</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="display-4 mt-4">Fetch Api</h1>
+            <div class="d-flex mb-4">
+                <button class="btn btn-secondary mr-4" id="getTxt">
+                    Get Text
+                </button>
+                <button class="btn btn-success mr-4" id="getUsers">
+                    Json Data
+                </button>
+                <button class="btn btn-danger mr-4" id="getApiData">
+                    Api Data
+                </button>
+            </div>
+
+            <div id="output"></div>
+            <form action="" id="postForm">
+                <div class="form-group">
+                    <input
+                        type="text"
+                        id="name"
+                        class="form-control"
+                        placeholder="Enter your name"
+                    />
+                </div>
+                <div class="form-group">
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your Email"
+                        class="form-control"
+                    />
+                </div>
+                <div class="form-group col-6">
+                    <label>Gender</label>
+                    <select id="gender" name="gender" class="form-control">
+                        <option value="0">Male</option>
+                        <option value="1">Female</option>
+                        <option value="2">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <div class="form-check-inline">
+                        <label class="form-check-label"
+                            ><input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="checkALL"
+                            />CheckAll</label
+                        >
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check-inline">
+                        <label class="form-check-label"
+                            ><input
+                                class="form-check-input"
+                                type="checkbox"
+                                value="0"
+                                name="colorset"
+                            />Orange</label
+                        >
+                    </div>
+                    <div class="form-check-inline">
+                        <label class="form-check-label"
+                            ><input
+                                class="form-check-input"
+                                type="checkbox"
+                                value="1"
+                                name="colorset"
+                            />Blue</label
+                        >
+                    </div>
+                    <div class="form-check-inline">
+                        <label class="form-check-label"
+                            ><input
+                                class="form-check-input"
+                                type="checkbox"
+                                value="2"
+                                name="colorset"
+                            />Red</label
+                        >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-check-inline">
+                        <input
+                            type="radio"
+                            id="val1"
+                            name="subject"
+                            value="cse"
+                        />CSE
+                    </div>
+                    <div class="form-check-inline">
+                        <input
+                            type="radio"
+                            id="val2"
+                            name="subject"
+                            value="eee"
+                        />EEE
+                    </div>
+                </div>
+                <button id="submitForm" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <script src="fetch.js"></script>
+    </body>
+</html>

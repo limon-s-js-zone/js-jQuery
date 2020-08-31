@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="./js/vanellina.js"></script>
+    <script src="./js/jquery.js"></script>
+    <link rel="stylesheet" href="./css/selector.css" />
+    <title>jquery|Html</title>
+  </head>
+  <body>
+    <header>
+      <h1>Javascript & jquery Learning Path</h1>
+    </header>
+    <div id="container">
+      <h1 id="heading1">
+        <p id="paragraph1">paragraph1 display</p>
+        Orginal Heading
+      </h1>
+      <p id="para1">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque id
+        lectus luctus, condimentum sapien faucibus, bibendum ligula. In hac
+        habitasse platea dictumst. <span>Quisque ullamcorper</span> congue
+        consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+
+      <h1 class="heading2">Heading Two</h1>
+      <p class="para2">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque id
+        lectus luctus, condimentum sapien faucibus, bibendum ligula. In hac
+        habitasse platea dictumst. <span>Quisque ullamcorper</span> congue
+        consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+
+      <ul id="list">
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+      </ul>
+
+      <input type="button" value="Button 1" />
+      <input type="submit" value="Submit" class="submit-1" />
+      <input type="text" />
+
+      <a href="http://google.com">Google</a>
+      <a href="http://yahoo.com">Yahoo</a>
+      <a id="facebook" href="http://facebook.com">Facebook</a>
+    </div>
+    <script>
+      //   $("h1").hide();
+      //   $("h1#heading1").hide();
+      $("h1#heading1 p#paragraph1").hide();
+      $("h1#heading1 p#paragraph1").show();
+      $("h1#heading1 p#paragraph1").css("background", "red");
+      $("h1#heading1 p#paragraph1").css({
+        color: "white",
+        "font-size": "10px",
+      });
+      $("ul#list li:first").css("color", "green");
+      $("ul#list li:last").css("color", "red");
+      $("ul#list li:even").css("color", "green");
+      $("ul#list li:odd").css("color", "red");
+      $("ul#list li:nth-child(3n)").css("list-style", "none");
+      // select based on type
+      // $(":text").hide();
+      // $(":submit").hide();
+      // select all attribute
+      $("[href]").css("color", "red");
+      // select submit-1 class with type
+      $(".submit-1[type]").css("color", "red");
+      // select ancor element with specific href value
+      $("a[href='http://yahoo.com']").css("color", "green");
+      // select #facebook id element  with href attribute
+      $("#facebook[href]").css("color", "yellow");
+      $("#facebook[href]").empty();
+      // hide all elements
+      // $("*").hide();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="./js/vanellina.js"></script>
+    <script src="./js/jquery.js"></script>
+    <link rel="stylesheet" href="./css/event.css" />
+    <title>jquery|Jquery</title>
+  </head>
+  <body>
+    <header>
+      <h1>jQuery Crash Course | Events</h1>
+    </header>
+    <div id="container">
+      <h3>Mouse Events</h3>
+      <button id="btn1" class="btn btnClass">Button 1</button>
+      <button id="btn2">Button 2</button>
+      <p class="para1">
+        jQuery is built on top of JavaScript, a rich and expressive language in
+        its own right. This section covers the basic concepts of JavaScript, as
+        well as some frequent pitfalls for people who have not used JavaScript
+        before. While it will be of particular value to people with no
+        programming experience
+      </p>
+      <h1 id="cords"></h1>
+      <hr />
+      <form id="form">
+        <label>Name</label><br />
+        <input type="text" id="name" name="name" />
+        <br />
+        <label>Email</label><br />
+        <input type="text" id="email" name="email" />
+        <br />
+        <label>Gender</label><br />
+        <select id="gender" name="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <br />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        /*
+        $("#btn1").click(function () {
+          //change button text
+          $("#btn1").text("Button Text");
+          alert("Button 1 clicked");
+        });
+        // on function has one event parameter and handler
+        $("#btn1").on("click", function () {
+          alert("Button Clicked!");
+        });
+        
+        $("#btn1").on("click", function () {
+          $(".para1").hide();
+        });
+        $("#btn2").on("click", function () {
+          $(".para1").show();
+        });
+        
+        $("#btn1").on("click", function () {
+          $(".para1").toggle();
+        });
+        
+        $("#btn1").on("dblclick", function () {
+          $(".para1").toggle();
+        });
+        // hover event is the shorhand of mouseenter and mouseleave event
+        $("#btn1").hover(function () {
+          $(".para1").toggle();
+        });
+        */
+        /*
+      //  mouseenter show and mouseleave hide element
+        $(".para1").hide();
+        $("#btn1").on("mouseenter", function () {
+          $(".para1").toggle();
+        });
+        $("#btn1").on("mouseleave", function () {
+          $(".para1").toggle();
+        });
+        */
+        /*
+        // mousedown(mouse click) wait for mousedown so we need mouseup(relese mouse) for working perfectly
+        $(".para1").hide();
+        $("#btn2").on("mousedown", function () {
+          $(".para1").toggle();
+        });
+
+        $("#btn2").on("mouseup", function () {
+          $(".para1").toggle();
+        });
+        */
+        // $("#btn2").on("mousemove", function () {
+        //   $(".para1").toggle();
+        // });
+        /*  
+        // get dom property
+        $("#btn1").on("click", function (e) {
+          alert(e.currentTarget.id);
+          alert(e.currentTarget.tagName);
+          alert(e.currentTarget.innerHTML);
+          alert(e.currentTarget.nodeName);
+          alert(e.currentTarget.className);
+          alert(e.currentTarget.classList);
+        });
+        */
+        /*  get cursor location       
+        $("#btn1").on("mousemove", function (e) {
+          $("#cords").html("Coords: Y: " + e.clientY + " X: " + e.clientX);
+          // $("#cords").html("Cords Y:'+e.clientY+'Cordes X:'+e.clientX+");
+        });
+        $(document).on("mousemove", function (e) {
+          $("#cords").html("Coords: Y: " + e.clientY + " X: " + e.clientX);
+        }); 
+        */
+        /* Form */
+        // set an field focus use focus
+        /* this use=> select the current element */
+        $("input").focus(function () {
+          // alert("input focused");
+          $(this).css("background", "red");
+        });
+        // remove focus and add certain style
+        $("input").blur(function () {
+          // alert("input focused");
+          $(this).css("background", "white");
+        });
+        $("input").keyup(function (e) {
+          // alert("input focused" + e.target.value);
+        });
+        $("select#gender").change(function (e) {
+          alert("Gender: " + e.target.value);
+        });
+        $("#form").submit(function (e) {
+          // prevent
+          e.preventDefault();
+          // val() return the value of selected input.
+          var name = $("input#name").val();
+          console.log("Submit: " + "name:" + name);
+        });
+      });
+    </script>
+  </body>
+</html>

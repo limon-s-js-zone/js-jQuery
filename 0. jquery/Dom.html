@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="./js/vanellina.js"></script>
+    <script src="./js/jquery.js"></script>
+    <link rel="stylesheet" href="./css/dom.css" />
+    <title>jquery|Html</title>
+  </head>
+  <body>
+    <header>
+      <h1>jQuery Crash Course | DOM Manipulation</h1>
+    </header>
+    <div id="container">
+      <button id="btn1">Button 1</button>
+      <button id="btn2">Button 1</button>
+      <p class="para1" id="para1">1. paragraph 1</p>
+      <p class="para2" id="para2">2. This is paragraph 2</p>
+      <p class="para3" id="para3">3. This is paragraph 3</p>
+      <p class="para4" id="para4" style="color: greenyellow;">
+        4. This is paragraph4
+      </p>
+      <div id="text">
+        Hello this is text section
+        <p>Paragrapgh goes here</p>
+      </div>
+      <div id="htmlText">Hello this is HTML section</div>
+
+      <ul id="list">
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 3</li>
+        <li>List Item 4</li>
+      </ul>
+      <a href="http://google.com" type="link">Google</a>
+      <input type="text" id="newItem" />
+      <h1>Array to List</h1>
+      <ul id="users"></ul>
+    </div>
+    <script>
+      // add text to the dom and remove existing text
+      $("div#text").text("<h1>welcome to our site</h1>");
+
+      // add html content to the dom remove all existing element
+      $("div#htmlText").html(
+        "<h1>html()welcome to our site & remove all existing item</h1>"
+      );
+      // add html content to the dom
+      $("div#htmlText").append("<h1>Append()Append to our site </h1>");
+
+      $("#btn1").text("Welcome");
+      $("p.para1").css({ background: "gray", color: "black" });
+      // addClass=> use to add multiple classes or single class
+      $("p#para2").addClass("myClass hello");
+      //removeClass with specific className
+      // removeClass()=> remove all the classes for selected elements but in dom
+      $("p.para2").removeClass("para2 myClass");
+      $("p#para2").addClass("myClass");
+      // class attribute sitll on dom
+      $("p#para2").removeClass();
+      // removeAttr=> remove selected attribute
+      $("a").removeAttr("type");
+      $(".para3").removeAttr("id");
+      $("#para4").addClass("para4 myClass");
+      $("#para4").removeAttr("class");
+      $("#para4").removeAttr("style");
+
+      $("#btn1").on("click", function (e) {
+        $("p.para1").addClass("myClass");
+        $("#btn1").text("My class Added");
+        $("#btn1").addClass("bt1-class");
+        console.log(e);
+        alert($("#btn1").text());
+        alert(e.currentTarget.className);
+      });
+      $("#btn2").click(function () {
+        // toggle to add and remove class
+        $("#para2").toggleClass("myClass");
+      });
+
+      // append=> add element add the end of selected element
+      $("ul#list").append("<li>append()New List ADDED</li>");
+      // prepend=> add element add the top of selected element
+      $("ul#list").prepend("<li>prepend()New List ADDED</li>");
+
+      // appendTo=> add #para2 element before #para1 element
+      $("#para1").appendTo("#para2");
+      // prependTo=> add #para2 element after #para1 element
+      $("#para1").prependTo("#para2");
+      jQuery("ul#list").before("<h4>after()=>ul appear after h4  </h4>");
+      jQuery("ul#list").after("<h5>before()=>ul appear before h5</h5>");
+      // empty()=> empty selected element butelement still in the dom
+      $("ul#list").empty();
+      // ditach()=> remove element from the dom completely
+      $("ul#list").detach();
+      $("a").attr({ target: "_blank", hreflang: "en" });
+      // attr => use to add single or multiple attribute at a same time;
+      $("#para4").attr({ class: "para4", style: "color:green;background:red" });
+      //  each p tag will wrap with h1 tag
+      // jQuery("p").wrap("<h1>");
+      //  all p tag will wrap with single h1 tag
+      // jQuery("p").wrapAll("<h1>");
+      $("#newItem").keyup(function (e) {
+        let code = e.which;
+        if (code == 13) {
+          e.preventDefault();
+          $("#users").append("<li>" + e.target.value + "</li>");
+        }
+      });
+      var array = [
+        { id: 1, name: "limon" },
+        { id: 2, name: "likhon" },
+        { id: 3, name: "lum" },
+      ];
+      $.map(array, function (value, index) {
+        $("#users").append(
+          "<li>" + "id:" + value.id + " Name:" + value.name + "</li>"
+        );
+      });
+
+      console.log($("#users li").toArray());
+      var newArr = $("#users li").toArray();
+      $.each(newArr, function (index, value) {
+        // innerHTML/textContent both are same
+        console.log(value.textContent);
+      });
+    </script>
+  </body>
+</html>

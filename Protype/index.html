@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+            crossorigin="anonymous"
+        />
+        <title>Protype</title>
+    </head>
+    <body>
+        <h1 class="badge-primary text-center">Protype</h1>
+        <p class="justify">
+            Prototype is a property that every function created in javascript
+            has that point to an object.
+        </p>
+        <p>
+            Object.create(object): allowed us to craete new object and
+            delegating to another object
+        </p>
+        <p>
+            <span>Difference between new and without new:</span> If we use new
+            keyword in fornt of a function invocation, javascript autometically
+            behind craete object. There no need to explicitely initiallize
+            Object.create() method.
+        </p>
+        <p>
+            Get prototype: Object.getPrototypeOf(instance) return the current
+            prototype of an object
+        </p>
+        <p>Has on property:instance.hasOwnProperty(value)</p>
+        <h2>We can't use new or a constuructor function in arrow function</h2>
+        <!-- <script src="1.protoType.js"></script> -->
+        <script src="2. protoType.js"></script>
+        <script src="2. protoType Es6.js"></script>
+        <script src="react-base.js"></script>
+    </body>
+</html>
