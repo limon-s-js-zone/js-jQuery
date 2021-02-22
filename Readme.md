@@ -380,11 +380,44 @@
           ```
 
 5.  ## CallBack Promise Asynchronous
+
     1.  ### Callback
+
         A callback is a function when a asynchronous function is ready.
+
+        ```js
+        const getUser = (id, callback) => {
+          logger("Data fetxhing start>3000....");
+          setTimeout(() => {
+            callback({ id: id, name: "limon" });
+          }, 2000);
+        };
+        const getRopository = (user, callback) => {
+          logger("Repositorty fetching start>3000....", user);
+          setTimeout(() => {
+            callback(["repo1", "repo2", "repo3"]);
+          }, 2000);
+        };
+        getUser(1, (user) => {
+          getRopository(user.name, (repo) => {
+            logger("Repos:", repo);
+          });
+        });
+        ```
+
     2.  ### Promise:
+
         pomise is an object that holds the eventual result of an asynchronous function.Initialy it's a independending state when we create the promises.
         Anywhere we have an asychronous function that takes a callback we should modified that function that reaturn a promise.
+
+        ```js
+        new Promise((resolve, reject) => {
+          setTimeout(() => {
+            console.log("Getting a user from a database");
+            resolve({ id: id, profile: "limon" });
+          }, 2000);
+        });
+        ```
 
 ## methods:
 
